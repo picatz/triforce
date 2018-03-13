@@ -31,8 +31,13 @@ func main() {
       }
     }
   }
-  fmt.Println("max X value: ", x)
-  fmt.Println("max Y value: ", y)
-  fmt.Println("max Z value: ", z)
+  fmt.Println("max X: ", x)
+  fmt.Println("max Y: ", y)
+  fmt.Println("max Z: ", z)
 }
+```
+```
+max X:  0.5
+max Y:  0.5
+max Z:  1
 ```
