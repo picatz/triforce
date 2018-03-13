@@ -5,12 +5,15 @@ import (
 	"math"
 )
 
+// A STL triangle ( also knows as a "facet" ) is made
+// of three vertices, a normal and an attribute.
 type Triangle struct {
 	Normal    *Normal
 	Vertices  *[3]Vertex
 	Attribute uint16
 }
 
+// Calculate the area of a given STL triangle.
 func (t *Triangle) Area() float32 {
 	a := t.Vertices[0].DistanceBetween(&t.Vertices[1])
 	b := t.Vertices[1].DistanceBetween(&t.Vertices[2])
@@ -20,6 +23,8 @@ func (t *Triangle) Area() float32 {
 	return float32(A)
 }
 
+// From a given slice of bytes, this will produce
+// a reference to a triangle made from that data.
 func TrianlgeFromBinaryChunk(chunk []byte) *Triangle {
 	n := &Normal{}
 	v := &[3]Vertex{}
