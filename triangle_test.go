@@ -19,7 +19,7 @@ func TestTrianlgeFromBinaryChunk(t *testing.T) {
 		panic("Incomplete binary chunk (missing data).")
 	}
 	triangle := TrianlgeFromBinaryChunk(data)
-	if triangle.Normal.I != 0 && triangle.Normal.I != 0 && triangle.Normal.I != 1 {
+	if triangle.Normal.I != 0 && triangle.Normal.J != 0 && triangle.Normal.K != 1 {
 		t.Error("Unable to create a triangle with proper normals parsed from chunk")
 	}
 }
