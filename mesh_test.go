@@ -24,3 +24,16 @@ func TestMeshMaximums(t *testing.T) {
 		t.Error("Unable to find maximum Z from binary file.")
 	}
 }
+
+func TestMeshMinimums(t *testing.T) {
+	m := MeshFromBinary("binary.stl")
+	if m.MinimumX() != -0.5 {
+		t.Error("Unable to find maximum X from binary file.")
+	}
+	if m.MinimumY() != -0.5 {
+		t.Error("Unable to find maximum Y from binary file.")
+	}
+	if m.MinimumZ() != 0 {
+		t.Error("Unable to find maximum Z from binary file.")
+	}
+}
